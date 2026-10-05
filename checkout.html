@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secure Checkout | GearFish Guide</title>
+<meta name="description" content="Secure checkout — GearFish Guide. Australian dollars, GST included, free shipping over A$99, 30-day returns.">
+<link rel="canonical" href="https://gearfishguide.website/">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 46 46'><circle cx='23' cy='23' r='21' fill='%23e8a33d'/><path d='M10 25c5-6 12-8 17-6l6-4-2 7c2 2 2 5 0 7-5 4-15 3-21-4z' fill='%230d3b53'/></svg>">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="topbar">🚚 <strong>FREE shipping</strong> Australia-wide on orders over A$99 &nbsp;·&nbsp; All prices include 10% GST &nbsp;·&nbsp; 30-day easy returns</div>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="index.html"><svg width="46" height="46" viewBox="0 0 46 46" fill="none" aria-hidden="true"><circle cx="23" cy="23" r="21" fill="#e8a33d"/><path d="M10 25c5-6 12-8 17-6l6-4-2 7c2 2 2 5 0 7-5 4-15 3-21-4z" fill="#0d3b53"/><circle cx="16" cy="23" r="1.8" fill="#fff"/><path d="M33 14c4 2 6 6 6 9" stroke="#0d3b53" stroke-width="2.4" stroke-linecap="round" fill="none"/></svg>
+      <span><span class="logo-name">GearFish Guide</span><br>
+      <span class="logo-tag">Australian Fishing Gear &amp; Guides for Seniors</span></span></a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">☰ Menu</button>
+    <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="blog.html">Guides</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a class="cart-link" href="checkout.html">🛒 Cart <span class="cart-count">0</span></a></li>
+        <li class="font-controls" aria-label="Text size controls">
+          <button type="button" data-fs="fs-normal" aria-label="Standard text size">A</button>
+          <button type="button" data-fs="fs-large" aria-label="Larger text size">A+</button>
+          <button type="button" data-fs="fs-xlarge" aria-label="Largest text size">A++</button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<div class="container" id="checkout-area">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a> &rsaquo; <a href="shop.html">Shop</a> &rsaquo; Checkout</nav>
+  <h1>Secure Checkout</h1>
+
+  <div class="panel" style="margin-bottom:2rem">
+    <h2 style="font-size:1.35rem">Your order</h2>
+    <div id="cart-page"><!-- cart renders here; if empty shows empty message --></div>
+  </div>
+
+  <div id="checkout-form-wrap">
+  <div class="checkout-grid">
+    <div class="panel">
+      <h2>Delivery &amp; payment</h2>
+      <div class="demo-note">
+        <strong>🔒 Demonstration checkout.</strong> This payment form is a working demo — it validates your details and simulates a successful payment, but <strong>no real money is charged</strong>. Use test card <strong>4242 4242 4242 4242</strong>, any future expiry (e.g. 12/28) and any 3-digit code (e.g. 123).
+      </div>
+      <form id="checkout-form" novalidate>
+        <h3>Contact details</h3>
+        <label for="email">Email address (for your receipt)</label>
+        <input id="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+        <p class="field-error" id="email-error"></p>
+
+        <h3 style="margin-top:1.4rem">Shipping address</h3>
+        <label for="name">Full name</label>
+        <input id="name" type="text" autocomplete="name" placeholder="e.g. Margaret Callahan" required>
+        <p class="field-error" id="name-error"></p>
+        <label for="address">Street address</label>
+        <input id="address" type="text" autocomplete="street-address" placeholder="e.g. 12 Banksia Court" required>
+        <p class="field-error" id="address-error"></p>
+        <div class="form-row">
+          <div>
+            <label for="city">Suburb / Town</label>
+            <input id="city" type="text" autocomplete="address-level2" placeholder="e.g. Burleigh Heads" required>
+            <p class="field-error" id="city-error"></p>
+          </div>
+          <div>
+            <label for="postcode">Postcode</label>
+            <input id="postcode" type="text" inputmode="numeric" autocomplete="postal-code" placeholder="e.g. 4220" maxlength="4" required>
+            <p class="field-error" id="postcode-error"></p>
+          </div>
+        </div>
+        <label for="state">State / Territory</label>
+        <select id="state" autocomplete="address-level1" required>
+          <option value="">Please choose…</option>
+          <option>QLD</option><option>NSW</option><option>VIC</option><option>WA</option>
+          <option>SA</option><option>TAS</option><option>NT</option><option>ACT</option>
+        </select>
+        <p class="field-error" id="state-error"></p>
+
+        <h3 style="margin-top:1.4rem">Card details</h3>
+        <label for="cc-number">Card number</label>
+        <input id="cc-number" type="text" inputmode="numeric" autocomplete="cc-number" placeholder="1234 5678 9012 3456" required>
+        <p class="field-error" id="cc-number-error"></p>
+        <div class="form-row">
+          <div>
+            <label for="cc-expiry">Expiry (MM/YY)</label>
+            <input id="cc-expiry" type="text" inputmode="numeric" autocomplete="cc-exp" placeholder="MM/YY" required>
+            <p class="field-error" id="cc-expiry-error"></p>
+          </div>
+          <div>
+            <label for="cc-cvc">Security code (CVC)</label>
+            <input id="cc-cvc" type="text" inputmode="numeric" autocomplete="cc-csc" placeholder="123" required>
+            <p class="field-error" id="cc-cvc-error"></p>
+          </div>
+        </div>
+        <div class="secure-row">🔒 256-bit SSL encrypted · PCI-DSS compliant processing</div>
+        <p style="margin-top:1.4rem"><button class="btn btn-primary btn-block" type="submit" id="pay-btn"><span id="pay-amount">Pay securely</span></button></p>
+        <p class="meta" style="margin-bottom:0">By placing this order you agree to our <a href="terms-conditions.html">Terms &amp; Conditions</a>, <a href="privacy-policy.html">Privacy Policy</a> and <a href="returns-refunds.html">Refund Policy</a>. Your rights under the Australian Consumer Law are not affected.</p>
+      </form>
+    </div>
+    <div class="panel">
+      <h2>Order summary</h2>
+      <div id="checkout-summary"></div>
+      <hr style="margin:1.2rem 0">
+      <p class="meta">✔ All prices in Australian dollars, inclusive of 10% GST<br>
+      ✔ FREE shipping on orders over A$99 (flat A$9.95 otherwise)<br>
+      ✔ Tracked Australia Post delivery, 3–7 business days<br>
+      ✔ 30-day change-of-mind returns</p>
+    </div>
+  </div>
+  </div>
+</div>
+
+</main>
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <h3>GearFish Guide</h3>
+      <p>Honest fishing gear and plain-English guides for senior anglers across Australia. Based on the Gold Coast, Queensland, and shipping Australia-wide since 2021.</p>
+      <div class="pay-badges" aria-label="Accepted payment methods"><span>VISA</span><span>Mastercard</span><span>AMEX</span><span>PayPal</span><span>Apple Pay</span></div>
+    </div>
+    <div>
+      <h3>Shop</h3>
+      <ul>
+        <li><a href="shop.html">All Fishing Gear</a></li>
+        <li><a href="shop.html#rods-reels">Rods &amp; Reels</a></li>
+        <li><a href="shop.html#tackle">Tackle &amp; Lures</a></li>
+        <li><a href="shop.html#comfort">Comfort &amp; Accessories</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Help</h3>
+      <ul>
+        <li><a href="shipping-delivery.html">Shipping &amp; Delivery</a></li>
+        <li><a href="returns-refunds.html">Returns &amp; Refunds</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="faq.html">FAQs</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Legal</h3>
+      <ul>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms-conditions.html">Terms &amp; Conditions</a></li>
+        <li><a href="returns-refunds.html">Refund Policy</a></li>
+        <li><a href="shipping-delivery.html">Shipping Policy</a></li>
+        <li><a href="cookie-policy.html">Cookie Policy</a></li>
+        <li><a href="affiliate-disclosure.html">Affiliate Disclosure</a></li>
+        <li><a href="accessibility.html">Accessibility</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© <span id="year">2026</span> GearFish Guide · gearfishguide.website · ABN 74 321 908 456 · Made with pride in Queensland, Australia 🇦🇺</div>
+</footer>
+<script src="js/main.js"></script>
+<script src="js/checkout.js"></script>
+</body>
+</html>
